@@ -28,8 +28,8 @@ public class LoginServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//getting form data
-		
-		RequestDispatcher rd = request.getRequestDispatcher("login.html");
+	
+		RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
 		rd.forward(request, response);
 		
 		
@@ -49,7 +49,7 @@ public class LoginServlet extends HttpServlet {
 				RequestDispatcher rd = request.getRequestDispatcher("welcome");
 				rd.forward(request, response);
 			}else {
-				RequestDispatcher rd = request.getRequestDispatcher("login.html");
+				RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
 				
 				out.println("<p style=\"text-align:center;color:yellow;font-size:18px\">Authentication Failed!!! Invalid UserName/ Password</p>");
 				rd.include(request, response);
